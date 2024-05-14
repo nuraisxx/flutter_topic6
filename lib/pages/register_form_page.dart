@@ -26,7 +26,7 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
   final _passController = TextEditingController();
   final _confirmPassController = TextEditingController();
 
-  final List<String> _countries = ['Kazakhstan', 'Korea', 'USA', 'France'];
+  final List<String> _countries = ['Kazakhstan', 'Korea', 'USA', 'Thailand'];
   String _selectedCountry = 'Kazakhstan';
 
   final _nameFocus = FocusNode();
@@ -146,7 +146,7 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
               controller: _emailController,
               decoration: const InputDecoration(
                 labelText: 'Email Address',
-                hintText: 'Enter a email address',
+                hintText: 'Enater a email address',
                 icon: Icon(Icons.mail),
               ),
               keyboardType: TextInputType.emailAddress,
@@ -182,7 +182,7 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
               controller: _storyController,
               decoration: const InputDecoration(
                 labelText: 'Life Story',
-                hintText: 'Tell us about yourself',
+                hintText: 'Tell us about your self',
                 helperText: 'Keep it short, this is just a demo',
                 border: OutlineInputBorder(),
               ),
@@ -203,7 +203,7 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
                 hintText: 'Enter the password',
                 suffixIcon: IconButton(
                   icon:
-                  Icon(_hidePass ? Icons.visibility : Icons.visibility_off),
+                      Icon(_hidePass ? Icons.visibility : Icons.visibility_off),
                   onPressed: () {
                     setState(() {
                       _hidePass = !_hidePass;
@@ -231,7 +231,7 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
               child: const Text('Submit Form'),
               onPressed: _submitForm,
               style: ElevatedButton.styleFrom(
-                primary: Colors.green,
+                // primary: Colors.green,
                 textStyle: const TextStyle(color: Colors.white),
               ),
               //color: Colors.green,
@@ -257,10 +257,10 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
   }
 
   String? _validateName(String? value) {
-    final nameExp = RegExp(r'^[A-Za-z ]+$');
+    final _nameExp = RegExp(r'^[A-Za-z ]+$');
     if (value == null) {
-      return 'Name is required.';
-    } else if (!nameExp.hasMatch(value)) {
+      return 'Name is reqired.';
+    } else if (!_nameExp.hasMatch(value)) {
       return 'Please enter alphabetical characters.';
     } else {
       return null;
@@ -307,6 +307,7 @@ class _RegisterFormPageState extends State<RegisterFormPage> {
         ),
       ),
     );
+    // До Flutter 2.0
     // _scaffoldKey.currentState.showSnackBar(
     //   SnackBar(
     //     duration: Duration(seconds: 5),

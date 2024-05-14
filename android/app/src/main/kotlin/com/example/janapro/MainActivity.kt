@@ -1,4 +1,4 @@
-package com.example.newpro
+package com.example.janapro
 
 import io.flutter.embedding.android.FlutterActivity
 
